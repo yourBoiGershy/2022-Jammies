@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyBullet : MonoBehaviour
 {
+    //making change for Alan :)
     //bullet speed
     public float speed = 10.0f;
     //create rigidbody component
