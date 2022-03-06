@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private Weapon weapon = originalWeapon;                     //Type of weapon  
 
     public HealthBar healthBar;
+    public int numberOfEnemies = 6;
 
     private Slider slider; 
     private void Awake()
@@ -74,6 +75,11 @@ public class Player : MonoBehaviour
             //Instantiate(bullet, playerPosition, Quaternion.identity);
 
         }
+
+        if (numberOfEnemies == 0) {
+            Debug.Log("Player has won");
+        }
+
     }
 
     private void FixedUpdate()
@@ -109,5 +115,17 @@ public class Player : MonoBehaviour
     void updateCurrentHealth(float health)
     {
         currentHealth = health;
+    }
+
+    void removeEnemy()
+    {
+        numberOfEnemies -= 1;
+        Debug.Log(numberOfEnemies);
+    }
+
+    void boss()
+    {
+        numberOfEnemies = 0;
+        Debug.Log(numberOfEnemies);
     }
 }

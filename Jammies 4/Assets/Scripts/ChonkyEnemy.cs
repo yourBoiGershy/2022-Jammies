@@ -36,6 +36,7 @@ public class ChonkyEnemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            GameObject.FindGameObjectWithTag("Player").SendMessage("removeEnemy");
             //Destroy(currentHealth);
         }
     }

@@ -120,7 +120,10 @@ public class TwinshotEnemy : MonoBehaviour
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
+        {
             Destroy(gameObject);
+            GameObject.FindGameObjectWithTag("Player").SendMessage("removeEnemy");
+        }
 
         slider.value = currentHealth;
 

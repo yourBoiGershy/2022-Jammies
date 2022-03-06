@@ -635,6 +635,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3906526595082224664, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -486
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906526595082224664, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -310
+      objectReference: {fileID: 0}
     - target: {fileID: 6119118762426357242, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -642,6 +650,14 @@ PrefabInstance:
     - target: {fileID: 6119118762426357242, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249216396494516, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249216396494516, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 313
       objectReference: {fileID: 0}
     - target: {fileID: 7873390967387464825, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
       propertyPath: m_Camera

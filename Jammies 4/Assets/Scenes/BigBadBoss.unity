@@ -261,7 +261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1853553887
 PrefabInstance:
@@ -281,6 +281,14 @@ PrefabInstance:
     - target: {fileID: 6119118762426357242, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249216396494516, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190249216396494516, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 313
       objectReference: {fileID: 0}
     - target: {fileID: 7873390967387464825, guid: 5c46698fa160cb44c9c7210c53c68d98, type: 3}
       propertyPath: m_Camera

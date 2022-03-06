@@ -26,7 +26,7 @@ public class PlayerBullet : MonoBehaviour
         //Debug.Log("collision occured");
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.SendMessage("takedamage", 0.25);
+            collision.gameObject.SendMessage("takedamage", 10);
             Destroy(gameObject);
         }
     }
