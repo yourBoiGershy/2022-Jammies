@@ -20,10 +20,11 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision occured");
+        
         if (collision.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SendMessage("takedamage", 0.25);
+            //Destroy(collision.gameObject);
         }
     }
 
@@ -32,6 +33,13 @@ public class EnemyBullet : MonoBehaviour
     {
         //move the bullet
         transform.Translate(0.0f, speed * Time.deltaTime, 0.0f);
+
+        float xCoordinate = transform.position.x;
+        float yCoordinate = transform.position.y;
+
+        //Debug.Log("x coordinate: " + xCoordinate + " y coordinate: " + yCoordinate);
+        if (xCoordinate < -22 || xCoordinate > 22 || yCoordinate < -9.5 || yCoordinate > 9.5)
+            Destroy(gameObject);
     }
 
     private void FixedUpdate()

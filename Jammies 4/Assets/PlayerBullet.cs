@@ -14,6 +14,8 @@ public class PlayerBullet : MonoBehaviour
     //create a vector that only moves upwards (player's bullet can only move in one direction)
     private Vector3 move = Vector3.down;
 
+
+
     public void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -21,10 +23,12 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision occured");
+        //Debug.Log("collision occured");
         if (collision.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+           
+            collision.gameObject.SendMessage("takedamage", 0.25);
         }
     }
 
@@ -33,6 +37,13 @@ public class PlayerBullet : MonoBehaviour
     {
         //move the bullet
         transform.Translate(0.0f, speed * Time.deltaTime, 0.0f);
+
+        float xCoordinate = transform.position.x;
+        float yCoordinate = transform.position.y;
+
+        //Debug.Log("x coordinate: " + xCoordinate + " y coordinate: " + yCoordinate);
+        if (xCoordinate < -22 || xCoordinate > 22 || yCoordinate < -9.5 || yCoordinate > 9.5)
+            Destroy(gameObject);
     }
 
     private void FixedUpdate()

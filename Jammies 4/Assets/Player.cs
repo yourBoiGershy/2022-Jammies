@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
-
+ 
 public class Player : MonoBehaviour
 {
-    
+
     private Vector3 move = Vector3.zero;            //Player movement Vector
     public float speed = 5.0f;                      //Player movespeed  
     private float fireRate = 3;                     //Player fire rate
@@ -14,10 +15,17 @@ public class Player : MonoBehaviour
     public GameObject bullet;                       //Create a bullet object
     private Rigidbody2D rb2d;                       //Create rigidbody
     public Weapon weapon = new DefaultWeapon();                           //Type of weapon
+    public float maxHealth = 1.0f;
+    public float currentHealth;
+    public HealthBar healthBar;
 
+    private Slider slider; 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+        slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
+        slider.value = currentHealth;
     }
 
     // Update is called once per frame
@@ -63,5 +71,17 @@ public class Player : MonoBehaviour
 
             rb2d.MovePosition(newPosition);
         }
+    }
+
+    void takedamage(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            //Destroy(currentHealth);
+        }
+        //slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
+        slider.value = currentHealth;
     }
 }
