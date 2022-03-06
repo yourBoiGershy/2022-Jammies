@@ -104,6 +104,7 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
             //Destroy(currentHealth);
         }
         //slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
@@ -122,7 +123,9 @@ public class Player : MonoBehaviour
         Debug.Log(numberOfEnemies);
         if (numberOfEnemies <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            if(SceneManager.GetActiveScene().buildIndex != 12){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            }
         }
     }
 
