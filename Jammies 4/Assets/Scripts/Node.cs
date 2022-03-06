@@ -45,7 +45,7 @@ public class Node
             nodes.CopyTo(nextNodes, 0);
         }
         enemies = null;
-       
+        nodeType = type;
     }
 
     public Node(int ident, string en, NodeType type)
