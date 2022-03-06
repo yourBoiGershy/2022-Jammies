@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyBullet : MonoBehaviour
 {
-    //making change for Alan :)
+
     //bullet speed
-    public float speed = 10.0f;
+    private float speed = 10.0f;
     //create rigidbody component
     private Rigidbody2D rb2d;
     //create a vector that only moves upwards (enemy's bullet can only move in one direction)
