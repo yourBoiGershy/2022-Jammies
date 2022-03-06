@@ -19,7 +19,8 @@ public class BigBullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SendMessage("takedamage", 0.4);
+            //Destroy(collision.gameObject);
         }
     }
 
