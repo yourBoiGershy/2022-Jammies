@@ -14,9 +14,11 @@ public class Player : MonoBehaviour
     private float lastFired;                        //Track time the last bullet was fired 
     public GameObject bullet;                       //Create a bullet object
     private Rigidbody2D rb2d;                       //Create rigidbody
-    public Weapon weapon = new DefaultWeapon();                           //Type of weapon
-    public float maxHealth = 1.0f;
-    public float currentHealth;
+    private static Weapon originalWeapon = new DefaultWeapon();
+    private static Weapon shotgun = new ShotgunWeapon();
+    private Weapon weapon = originalWeapon;                     //Type of weapon  
+    private float maxHealth = 2.0f;
+    private float currentHealth;
     public HealthBar healthBar;
 
     private Slider slider; 
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
         slider.value = currentHealth;
+        slider.maxValue = maxHealth;
     }
 
     // Update is called once per frame
