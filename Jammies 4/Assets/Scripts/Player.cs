@@ -17,8 +17,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2d;                       //Create rigidbody
 
                        
-    private int maxHealth = 5;
-    private float currentHealth = 5;
+    private int maxHealth = 3;
+    private float currentHealth = 3;
 
     private static Weapon originalWeapon = new DefaultWeapon();
     private static Weapon shotgun = new ShotgunWeapon();
@@ -91,10 +91,12 @@ public class Player : MonoBehaviour
         {
 
             Vector3 translation = move * speed * Time.fixedDeltaTime;
+
+
             Vector3 newPosition = transform.position + translation;
 
-
-            rb2d.MovePosition(newPosition);
+            if (newPosition.x > -20 && newPosition.x < 20 && newPosition.y > -11 && newPosition.y < 11)
+                rb2d.MovePosition(newPosition);
         }
     }
 
