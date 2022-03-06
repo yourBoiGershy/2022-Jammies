@@ -24,7 +24,8 @@ public class EnemyBullet : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.SendMessage("takedamage", 0.25);
-            //Destroy(collision.gameObject);
+            Destroy(gameObject);
+           
         }
     }
 
@@ -38,7 +39,7 @@ public class EnemyBullet : MonoBehaviour
         float yCoordinate = transform.position.y;
 
         //Debug.Log("x coordinate: " + xCoordinate + " y coordinate: " + yCoordinate);
-        if (xCoordinate < -22 || xCoordinate > 22 || yCoordinate < -9.5 || yCoordinate > 9.5)
+        if (xCoordinate < -22 || xCoordinate > 22 || yCoordinate < -12 || yCoordinate > 12)
             Destroy(gameObject);
     }
 
