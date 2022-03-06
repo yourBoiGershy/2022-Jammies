@@ -14,37 +14,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Node0.unity
     guid: d832274181a5ccc47ba6ada0f8872c3c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node1.unity
     guid: 44a31104abdc9ef45ac7c67fc4dbe8ae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node2.unity
     guid: 0dce3c4cb604dc9439fbe3f77c5a0596
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node3.unity
     guid: 56d4608575f0257469e80665179b0614
   - enabled: 1
     path: Assets/Scenes/Node4.unity
     guid: 67c78367e8794e343b93516a145c013f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node5.unity
     guid: ec24a61644334b843860dca9cc9a6ac2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node6.unity
     guid: dd0154d8fa03dc349b8a8e0d4413d59c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node7.unity
     guid: 374de212e98db4c4b8bb74c76ec83569
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node9.unity
     guid: 8cf3a1fd9ae425d4faaad538259b96fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node10.unity
     guid: ca693c1cf6346474a9ee368586d786f0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node11.unity
     guid: f92d992d483ef0e4daba008f31e65168
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Node12.unity
     guid: a90d4df9f5c73a142b3532e431183aa6
   - enabled: 1
