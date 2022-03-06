@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
  
@@ -121,7 +122,7 @@ public class Player : MonoBehaviour
         Debug.Log(numberOfEnemies);
         if (numberOfEnemies <= 0)
         {
-            Debug.Log("Player has won");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
 
