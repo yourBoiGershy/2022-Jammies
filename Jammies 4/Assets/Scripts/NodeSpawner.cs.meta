@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 222fd4b89c0b06549a220895f4978034
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - entityToSpawn: {fileID: 1519186653202193706, guid: c140b9515090d764989ee1495676a1b1, type: 3}
+  - canvas: {instanceID: 0}
+  - spawnManagerValues: {fileID: 11400000, guid: be4939881caced346953302d5ddbb394, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
