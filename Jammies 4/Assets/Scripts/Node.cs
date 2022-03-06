@@ -14,7 +14,7 @@ public class Node
 {
     public int id;
     public Node[] nextNodes;
-    public Enemy[] enemies;
+    public string enemies;
     public NodeType nodeType;
     public int xPos;
     public int yPos;
@@ -45,21 +45,23 @@ public class Node
             nodes.CopyTo(nextNodes, 0);
         }
         enemies = null;
+       
     }
 
-    public Node(int ident, Enemy[] en, NodeType type)
+    public Node(int ident, string en, NodeType type)
     {
         id = ident;
         nextNodes = null;
         if (en != null && en.Length > 0)
         {
-            enemies = new Enemy[en.Length];
-            en.CopyTo(enemies, 0);
+            //enemies = new Enemy[en.Length];
+            //en.CopyTo(enemies, 0);
+            enemies = en;
         }
         nodeType = type;
     }
 
-    public Node(int ident, Node[] nodes, Enemy[] en, NodeType type)
+    public Node(int ident, Node[] nodes, string en, NodeType type)
     {
         id = ident;
         if (nodes != null && nodes.Length > 0)
@@ -69,9 +71,11 @@ public class Node
         }
         if (en != null && en.Length > 0)
         {
-            enemies = new Enemy[en.Length];
-            en.CopyTo(enemies, 0);
+            //enemies = new Enemy[en.Length];
+            //en.CopyTo(enemies, 0);
+            enemies = null;
         }
+
         nodeType = type;
     }
 
