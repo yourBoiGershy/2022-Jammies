@@ -10,6 +10,9 @@ public class ChonkyEnemy : MonoBehaviour
     public GameObject bullet;                           //bullet object to be fired
     private Rigidbody2D rb2d;                           //Create rigidbody
 
+    private float maxHealth = 1;
+    private float currentHealth = 1;
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -24,6 +27,16 @@ public class ChonkyEnemy : MonoBehaviour
         {
             fireTimer = 0;
             Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(180f, 0f, 0f));
+        }
+    }
+
+    public void takedamage(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            //Destroy(currentHealth);
         }
     }
 }

@@ -13,6 +13,8 @@ public class MovingEnemy : MonoBehaviour
     private Vector3 move = new Vector3(1f, 0f, 0f);     //movement vector
     private float timer = 0;                            //timer for changing direction
     private float directionTimer = 3;                   //timer goal
+    private float maxHealth = 1;
+    private float currentHealth = 1;
 
     // Start is called before the first frame update
     private void Awake()
@@ -44,5 +46,15 @@ public class MovingEnemy : MonoBehaviour
 
         rb2d.MovePosition(newPosition);
 
+    }
+
+    void takedamage(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            //Destroy(currentHealth);
+        }
     }
 }
