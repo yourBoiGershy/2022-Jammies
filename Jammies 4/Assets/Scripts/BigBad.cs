@@ -160,7 +160,7 @@ public class BigBad : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            GameObject.FindGameObjectWithTag("Player").SendMessage("boss");
+            GameObject.FindGameObjectWithTag("Player").SendMessage("removeEnemy");
         }
 
         slider.value = currentHealth;

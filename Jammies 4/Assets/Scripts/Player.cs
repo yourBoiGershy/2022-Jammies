@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     private Weapon weapon = originalWeapon;                     //Type of weapon  
 
     public HealthBar healthBar;
-    public int numberOfEnemies = 6;
+    public int numberOfEnemies;
 
     private Slider slider; 
     private void Awake()
@@ -33,10 +33,10 @@ public class Player : MonoBehaviour
         slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
         slider.value = currentHealth;
         slider.maxValue = maxHealth;
-
+        numberOfEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
         //slider.maxValue = 5;
-        Debug.Log(slider.value);
+        Debug.Log(numberOfEnemies);
     }
 
     private void Start()
@@ -76,9 +76,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (numberOfEnemies == 0) {
-            Debug.Log("Player has won");
-        }
+        
 
     }
 
@@ -121,11 +119,11 @@ public class Player : MonoBehaviour
     {
         numberOfEnemies -= 1;
         Debug.Log(numberOfEnemies);
+        if (numberOfEnemies <= 0)
+        {
+            Debug.Log("Player has won");
+        }
     }
 
-    void boss()
-    {
-        numberOfEnemies = 0;
-        Debug.Log(numberOfEnemies);
-    }
+    
 }
