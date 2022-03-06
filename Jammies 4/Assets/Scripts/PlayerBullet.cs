@@ -7,12 +7,11 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
 
-    //bullet speed
-    public float speed = 10.0f;
-    //create rigidbody component
-    private Rigidbody2D rb2d;
-    //create a vector that only moves upwards (player's bullet can only move in one direction)
-    private Vector3 move = Vector3.down;
+    
+    public float speed = 10.0f;                 //bullet speed
+    private Rigidbody2D rb2d;                   //create rigidbody component
+    private Vector3 move = Vector3.down;        //create a vector that only moves upwards (player's bullet can only move in one direction)
+    private static float damage = 0.25f;
 
 
 
@@ -26,7 +25,7 @@ public class PlayerBullet : MonoBehaviour
         //Debug.Log("collision occured");
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.SendMessage("takedamage", 10);
+            collision.gameObject.SendMessage("takedamage", damage);
             Destroy(gameObject);
         }
     }
@@ -41,7 +40,7 @@ public class PlayerBullet : MonoBehaviour
         float yCoordinate = transform.position.y;
 
         //Debug.Log("x coordinate: " + xCoordinate + " y coordinate: " + yCoordinate);
-        if (xCoordinate < -22 || xCoordinate > 22 || yCoordinate < -9.5 || yCoordinate > 12)
+        if (xCoordinate < -22 || xCoordinate > 22 || yCoordinate < -12 || yCoordinate > 12)
             Destroy(gameObject);
     }
 

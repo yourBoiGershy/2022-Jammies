@@ -78,7 +78,7 @@ public class TwinshotEnemy : MonoBehaviour
                     flurry = false;
                     break;
                 case 1:
-                    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+                    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
                     aimed = false;
                     flurry = true;
                     break;
