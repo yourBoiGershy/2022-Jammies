@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShotgunEnemy : MonoBehaviour
 {
@@ -13,11 +14,26 @@ public class ShotgunEnemy : MonoBehaviour
     private int pattern = 0;
     private bool flurry = false;
     private bool aimed = false;
+    private float maxHealth = 10.0f;
+    private float currentHealth = 10.0f;
+    private Slider slider;
   
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        slider = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<Slider>();
+        slider.value = currentHealth;
+        slider.maxValue = maxHealth;
+
+    }
+
+    private void Start()
+    {
+        slider = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<Slider>();
+        slider.value = currentHealth;
+        slider.maxValue = maxHealth;
     }
 
     // Update is called once per frame
@@ -97,5 +113,15 @@ public class ShotgunEnemy : MonoBehaviour
         Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, angle - 75)));
         Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, angle - 120)));
         Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0, 0, angle - 60)));
+    }
+
+    public void takedamage(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+            Destroy(gameObject);
+
+        slider.value = currentHealth;
+
     }
 }

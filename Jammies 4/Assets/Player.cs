@@ -15,17 +15,29 @@ public class Player : MonoBehaviour
     public GameObject bullet;                       //Create a bullet object
     private Rigidbody2D rb2d;                       //Create rigidbody
     public Weapon weapon = new DefaultWeapon();                           //Type of weapon
-    public float maxHealth = 1.0f;
-    public float currentHealth;
+    private int maxHealth = 5;
+    private float currentHealth = 5;
     public HealthBar healthBar;
 
     private Slider slider; 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
         slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
         slider.value = currentHealth;
+        slider.maxValue = maxHealth;
+
+        //slider.maxValue = 5;
+        Debug.Log(slider.value);
+    }
+
+    private void Start()
+    {
+        {
+            slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
+            slider.value = currentHealth;
+            slider.maxValue = maxHealth;
+        }
     }
 
     // Update is called once per frame
@@ -83,5 +95,11 @@ public class Player : MonoBehaviour
         }
         //slider = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
         slider.value = currentHealth;
+       
+    }
+
+    void updateCurrentHealth(float health)
+    {
+        currentHealth = health;
     }
 }
