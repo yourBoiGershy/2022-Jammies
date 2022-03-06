@@ -45,7 +45,6 @@ public class NodeBehaviour : MonoBehaviour
         infoHeader = GameObject.Find("InfoHeader").GetComponent<Text>();
         rewardHeader = GameObject.Find("RewardHeader").GetComponent<Text>();
 
-        // change text and/or images before showing canvas
         string infoHeaderText = nextNode.nodeType.ToString() + " Stage";
         string infoText = "";
         string rewardText = "";
@@ -61,7 +60,7 @@ public class NodeBehaviour : MonoBehaviour
                     rewardText += "+1 STAT point";
                     break;
                 case NodeType.Hard:
-                    infoText += "Enemies with unique abilities await.\nDefeat them to obtain a unique ability.";
+                    infoText += "Enemies with unique abilities await.\nDefeat them to obtain their abilities.";
                     // get unique reward from node object
                     //rewardText += 
                     break;
@@ -87,7 +86,7 @@ public class NodeBehaviour : MonoBehaviour
             if (true) // DEBUGGING
             {
                 
-                //player.transform.position = nextNodeObject.transform.position;
+                player.transform.position = nextNodeObject.transform.position;
                 // if player presses move/battle/fight/??? and wins, set currentNode to nextNode
                 // currentNode = nextNode;
             }
