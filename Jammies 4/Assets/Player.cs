@@ -6,18 +6,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //Player movement Vector
-    private Vector3 move = Vector3.zero;
-    //Player movespeed
-    public float speed = 5.0f;
-    //Player fire rate
-    private float fireRate = 3;
-    //Track time the last bullet was fired 
-    private float lastFired;
-    //Create a bullet object
-    public GameObject bullet;
-    //Create rigidbody
-    private Rigidbody2D rb2d;
+    
+    private Vector3 move = Vector3.zero;            //Player movement Vector
+    public float speed = 5.0f;                      //Player movespeed  
+    private float fireRate = 3;                     //Player fire rate
+    private float lastFired;                        //Track time the last bullet was fired 
+    public GameObject bullet;                       //Create a bullet object
+    private Rigidbody2D rb2d;                       //Create rigidbody
+    public Weapon weapon = new DefaultWeapon();                           //Type of weapon
 
     private void Awake()
     {
@@ -45,7 +41,9 @@ public class Player : MonoBehaviour
         {
             lastFired = Time.time;
             Vector3 playerPosition = transform.position;
-            Instantiate(bullet, playerPosition, Quaternion.identity);
+            weapon.fire(this, bullet);
+            
+            //Instantiate(bullet, playerPosition, Quaternion.identity);
 
         }
     }
