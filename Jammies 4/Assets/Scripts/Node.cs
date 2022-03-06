@@ -12,15 +12,29 @@ public enum NodeType
 
 public class Node
 {
-    public int id; // for debugging only (iirc???)
+    public int id;
     public Node[] nextNodes;
     public Enemy[] enemies;
     public NodeType nodeType;
+    public int xPos;
+    public int yPos;
 
-    public Node(int ident)
+    private readonly bool[,] adjacency = new bool[,]
     {
-        id = ident;
-    }
+        {false, true,   true,   false,  false,  false,  false,  false, false, false, false, false, false},
+        {false, false,  false,  true,   true,   true,   false,  false, false, false, false, false, false},
+        {false, false,  false,  false,  false,  true,   true,   false, false, false, false, false, false },
+        {false, false,  false,  false,  false,  false,  false,  true,  false, false, false, false, false },
+        {false, false,  false,  false,  false,  false,  false,  false, true,  false, false, false, false },
+        {false, false,  false,  false,  false,  false,  false,  false, false, true,  false, false, false },
+        {false, false,  false,  false,  false,  false,  false,  false, false, true,  false, false, false },
+        {false, false,  false,  false,  false,  false,  false,  false, false, false, true,  false, false },
+        {false, false,  false,  false,  false,  false,  false,  false, false, false, false, true,  false },
+        {false, false,  false,  false,  false,  false,  false,  false, false, false, false, true,  false },
+        {false, false,  false,  false,  false,  false,  false,  false, false, false, false, false, true },
+        {false, false,  false,  false,  false,  false,  false,  false, false, false, false, false, true },
+        {false, false,  false,  false,  false,  false,  false,  false, false, false, false, false, false }
+    };
 
     public Node(int ident, Node[] nodes, NodeType type)
     {
@@ -59,5 +73,10 @@ public class Node
             en.CopyTo(enemies, 0);
         }
         nodeType = type;
+    }
+
+    public bool Adjacent(int check)
+    {
+        return adjacency[id, check];
     }
 }
