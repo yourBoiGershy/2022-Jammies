@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class Enemy : MonoBehaviour
 
     private float maxHealth = 1.00f;
     private float currentHealth;
+	
+	public string enemyType = "";
+    public int atk = 1;
+    public int hp = 1;
+
 
     private Vector3 currentHealthPosition;
 
@@ -84,5 +90,6 @@ public class Enemy : MonoBehaviour
         
         
         //Debug.Log("Hp left: " + health);
+
     }
 }
